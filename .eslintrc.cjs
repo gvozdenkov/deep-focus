@@ -1,0 +1,42 @@
+module.exports = {
+  root: true,
+  env: { browser: true, es2020: true },
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    project: ['./tsconfig.json', './tsconfig.node.json'],
+    tsconfigRootDir: __dirname,
+  },
+  extends: [
+    'prettier',
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended-type-checked',
+    'plugin:react-hooks/recommended',
+    'plugin:react/recommended',
+    'plugin:react/jsx-runtime',
+  ],
+  ignorePatterns: ['dist', '.eslintrc.cjs'],
+  plugins: ['react-refresh', 'prettier'],
+  rules: {
+    'prettier/prettier': ['error'],
+    'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
+    'react/jsx-uses-react': 'error',
+    'react/jsx-uses-vars': 'error',
+    'no-var': 'error',
+    semi: 'error',
+    indent: ['error', 2, { SwitchCase: 1 }],
+    'no-multi-spaces': 'error',
+    'space-in-parens': 'error',
+    'no-multiple-empty-lines': 'error',
+    'prefer-const': 'error',
+  },
+  settings: {
+    react: {
+      createClass: 'createReactClass',
+      pragma: 'React',
+      fragment: 'Fragment',
+      version: 'detect',
+    },
+  },
+};
