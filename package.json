@@ -2,19 +2,29 @@
   "name": "deep-focus",
   "version": "1.0.0",
   "description": "pomodoro time tracker",
-  "main": "index.js",
+  "type": "module",
+  "imports": {
+    "#*": [
+      "./src/*",
+      "./src/*.ts",
+      "./src/*.tsx",
+      "./src/*.js",
+      "./src/*.jsx",
+      "./src/*/index.ts",
+      "./src/*/index.tsx",
+      "./src/*/index.js",
+      "./src/*/index.jsx"
+    ]
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "lint:fix": "eslint . --fix --config .eslintrc.cjs",
     "preview": "vite preview",
-    "prettier": "prettier --write src",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "prettier": "prettier --write src .eslintrc.cjs .lintstagedrc.cjs",
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "lint-staged": "lint-staged --config .lintstagedrc.cjs"
   },
   "repository": {
     "type": "git",
@@ -31,7 +41,12 @@
     "url": "https://github.com/gvozdenkov/deep-focus/issues"
   },
   "homepage": "https://github.com/gvozdenkov/deep-focus#readme",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
   "devDependencies": {
+    "@types/node": "^20.8.7",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
@@ -39,13 +54,21 @@
     "@vitejs/plugin-react": "^4.0.3",
     "eslint": "^8.45.0",
     "eslint-config-prettier": "^8.8.0",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.33.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
-    "prettier": "^2.8.7",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "eslint-plugin-typescript-sort-keys": "^3.1.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.0.1",
+    "prettier": "2.8.7",
     "sass": "^1.64.1",
-    "typescript": "^5.0.2",
+    "tsc-files": "^1.1.4",
+    "typescript": "5.0.2",
     "vite": "^4.4.5"
   }
 }

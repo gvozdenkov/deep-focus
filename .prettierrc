@@ -11,5 +11,15 @@
   "semi": true,
   "quoteProps": "as-needed",
   "arrowParens": "always",
-  "proseWrap": "always"
+  "proseWrap": "always",
+  "useTabs": false,
+  "overrides": [
+    {
+      "files": ["**/*.cjs"],
+      "options": {
+        "singleQuote": false,
+        "trailingComma": "all"
+      }
+    }
+  ]
 }

@@ -14,12 +14,19 @@
     "noEmit": true,
     "jsx": "react-jsx",
 
+    // Subpath imports
+    // https://habr.com/ru/articles/738132/
+    "baseUrl": "./",
+    "paths": {
+      "#*": ["./src/*"]
+    },
+
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"],
+  "include": ["src", "types/app.d.ts", "types/vite-env.d.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

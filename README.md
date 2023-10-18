@@ -68,7 +68,7 @@ work done.
   </p> -->
 
 <!-- TABLE OF CONTENTS -->
-<!-- <details>
+<details>
   <summary>Table of Contents</summary>
   <ol>
     <li>
@@ -91,7 +91,7 @@ work done.
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
-</details> -->
+</details>
 
 <!-- ABOUT THE PROJECT -->
 
@@ -179,6 +179,51 @@ project a star! Thanks again!
 4. Commit your Changes `git commit -m 'Add some AmazingFeature'`
 5. Push to the Branch `git push origin feature/AmazingFeature`
 6. Open a Pull Request
+7. After confirming the pull request update `dev` branch
+
+```sh
+git switch dev
+git pull
+```
+
+8. Switch back to `feature/AmazingFeature` and rebase to `dev`: `git rebase -i dev`
+9. This will start interactive rebase and open text editor with something like this:
+
+```sh
+pick c0c67ad 'commit message in feature/AmazingFeature'
+pick 62f32d3 'commit message in feature/AmazingFeature'
+pick s6566df 'commit message in feature/AmazingFeature'
+pick qw455er 'commit message in feature/AmazingFeature'
+pick 345rett 'commit message in feature/AmazingFeature'
+```
+
+3. Change rebase actions for commits: first stay `pick`, then all `s` and the last one `f -c`, Then
+   close text editor
+
+```sh
+pick c0c67ad 'commit message in feature/AmazingFeature'
+s 62f32d3 'commit message in feature/AmazingFeature'
+s s6566df 'commit message in feature/AmazingFeature'
+s qw455er 'commit message in feature/AmazingFeature'
+f -c 345rett 'commit message in feature/AmazingFeature'
+```
+
+4. After this new text editor will apper. Write your PR commit here. And close text editor.
+
+```sh
+feat/refact/fix/style: resulting text of your PR commit
+
+#separate the body of the commit with a new empty line from the title (if you need the body)
+Changelog of this commit:
+1. Bla-bla-bla
+2. And bla
+3. And bla-bla
+```
+
+5. Force push your squashed commit to remote `git push --force`
+6. Inform that your PR is prepared for the merge in `dev`
+7. Take a coffee :beer:
+8. Your PR will be merged to `dev` in `Rebase and merge` mode
 
 <p align="right"><a href="#readme-top">back to top</a></p>
 
