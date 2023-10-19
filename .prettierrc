@@ -11,5 +11,6 @@
   "semi": true,
   "quoteProps": "as-needed",
   "arrowParens": "always",
-  "proseWrap": "always"
+  "proseWrap": "always",
+  "useTabs": false
 }
