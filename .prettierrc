@@ -12,5 +12,14 @@
   "quoteProps": "as-needed",
   "arrowParens": "always",
   "proseWrap": "always",
-  "useTabs": false
+  "useTabs": false,
+  "overrides": [
+    {
+      "files": ["**/*.cjs"],
+      "options": {
+        "singleQuote": false,
+        "trailingComma": "all"
+      }
+    }
+  ]
 }
