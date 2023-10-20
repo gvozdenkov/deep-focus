@@ -30,9 +30,6 @@ module.exports = {
       },
     },
     react: {
-      // Regex for Component Factory to use,
-      // default to "createReactClass"
-      createClass: "createReactClass",
       // Pragma to use, default to "React"
       pragma: "React",
       // Fragment to use (may be a property of <pragma>), default to "Fragment"
